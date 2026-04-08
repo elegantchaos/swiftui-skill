@@ -13,12 +13,6 @@
 - When using `TabView(selection:)`, use a binding to a property that stores an enum rather than an integer or string. For example, `Tab("Home", systemImage: "house", value: .home)` is better than `Tab("Home", systemImage: "house", value: 0)`.
 - Do not write computed properties or methods that return `some View`, even if `@ViewBuilder` is used. Create separate `View` structs instead.
 
-## Adaptability
-
-- Avoid using explicit values for spacing, padding, opacity, etc. Prefer the default values as they are more adaptive, e.g use: `.padding()` rather than `.padding(10)`
-- Prefer semantic colour and style names over explicit colors.
-- If explicit values, colours etc are unavoidable, define a small set of constants with semantically meaningful names and use them consistently for all the code.
-
 ## Animating views
 
 - Strongly prefer to use the `@Animatable` macro over creating `animatableData` manually – the macro automatically adds conformance to the `Animatable` protocol and creates the correct `animatableData` property. If some properties should not or cannot be animated (e.g. Booleans, integers, etc), mark them `@AnimatableIgnored`.

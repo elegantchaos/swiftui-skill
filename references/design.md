@@ -1,16 +1,23 @@
 # Design
 
+## Adaptability
+
+- Avoid using explicit values for spacing, padding, opacity, etc. Prefer the default values as they are more adaptive, e.g use: `.padding()` rather than `.padding(10)`
+- Prefer semantic colour, style, font names over explicit ones.
+
 ## Creating a uniform design in this app
 
-Prefer to place standard fonts, sizes, colors, stack spacing, padding, rounding, animation timings, and more into a shared enum of constants, so they can be used by all views. This allows the app’s design to feel uniform and consistent, and be adjusted easily.
+Prefer to place standard fonts, sizes, colors, stack spacing, padding, rounding, animation timings, and more into a shared enum of constants, so they can be used by all views.
 
+Use semantically meaningful names for the constants.
+
+For a clean design, minimize the number of these constants. Aim for consistency.
 
 ## Requirements for flexible, accessible design
 
 - Never use `UIScreen.main.bounds` to read available space; prefer alternatives such as `containerRelativeFrame()`, or `visualEffect()` as appropriate, or (if there is no alternative) `GeometryReader`.
 - Prefer to avoid fixed frames for views unless content can fit neatly inside; this can cause problems across different device sizes, different Dynamic Type settings, and more. Giving frames some flexibility is usually preferred.
 - Apple’s minimum acceptable tap area for interactions on iOS is 44x44. Ensure this is strictly enforced.
-
 
 ## Standard system styling
 
@@ -20,7 +27,6 @@ Prefer to place standard fonts, sizes, colors, stack spacing, padding, rounding,
 - Prefer system hierarchical styles (e.g. secondary/tertiary) over manual opacity when possible, so the system can adapt to the correct context automatically.
 - When using `Form`, wrap controls such as `Slider` in `LabeledContent` so the title and control are laid out correctly.
 - When using `RoundedRectangle`, the default rounding style is `.continuous` – there is no need to specify it explicitly.
-
 
 ## Ensuring designs work for everyone
 
