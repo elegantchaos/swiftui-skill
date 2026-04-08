@@ -1,7 +1,5 @@
 # SwiftUI Patterns
 
-Summary distilled from [`references/TheSwiftUIWay.epub`](../../../references/TheSwiftUIWay.epub) for use in the local `swiftui` skill. This is written as durable review and implementation guidance rather than a chapter-by-chapter restatement.
-
 ## How to use this reference
 
 Use this file when reviewing or writing SwiftUI code that needs guidance on composition, dependency modeling, update performance, async work, list efficiency, animation scope, and adaptive UI design.
