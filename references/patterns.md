@@ -16,6 +16,8 @@ Prefer these rules when they conflict with older SwiftUI habits:
 
 ## Recommended patterns
 
+Adopt these patterns when writing new code or refactoring existing code. When reviewing existing code look out for places where the patterns could be adopted.
+
 ### Composition and view structure
 
 - Split large screens into small standalone `View` structs rather than helper properties or functions returning `some View`.
@@ -87,6 +89,8 @@ Prefer these rules when they conflict with older SwiftUI habits:
 - Make custom components adapt to accessibility settings such as Dynamic Type, VoiceOver, Reduce Motion, Increased Contrast, and Reduce Transparency.
 
 ## Potentially harmful patterns
+
+Avoid these patterns when writing new code or refactoring existing code. When reviewing existing code, report places where the patterns are in use, and suggest alternatives.
 
 ### Identity-breaking structure
 

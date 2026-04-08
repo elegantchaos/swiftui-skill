@@ -1,17 +1,23 @@
 # SwiftUI Views
 
-- Strongly prefer to avoid breaking up view bodies using computed properties or methods that return `some View`, even if `@ViewBuilder` is used. Extract them into separate `View` structs instead, placing each into its own file.
-- Flag `body` properties that are excessively long; they should be broken into extracted subviews.
-- Button actions should be extracted from view bodies into separate methods, to avoid mixing layout and logic.
-- Similarly, general business logic should not live inline in `task()`, `onAppear()` or elsewhere in `body`.
-- Prefer to place view logic into view models or similar, so it can be tested. For more help with testing, suggest the `swift-testing-pro` skill.
-- Each type (struct, class, enum) should be in its own Swift file. Flag files containing multiple type definitions.
-- Unless a full-screen editing experience is required, prefer using `TextField` with `axis: .vertical` to using `TextEditor`, because it allows placeholder text. If a specific minimum height is required for `TextField`, use something like `lineLimit(5...)`.
-- If a button action can be provided directly as an `action` parameter, do so. For example: `Button("Label", systemImage: "plus", action: myAction)` is preferred over `Button("Label", systemImage: "plus") { action() }`.
-- When rendering SwiftUI views to images, strongly prefer `ImageRenderer` over `UIGraphicsImageRenderer`.
-- `#Preview` should be used for previews, not the legacy `PreviewProvider` protocol.
+- Keep `body` properties compact, by:
+  - break long bodies into subviews
+  - button actions should call a method using an `action:` parameter, not contain inline code
+  - `task()`, `onAppear()` etc should call a method, not contain inline code
+
+- Place view logic into view models or similar, so it can be tested.
+- Prefer using `TextField` with `axis: .vertical` to using `TextEditor`, unless full-screen editing experience is required, because it allows placeholder text.
+- If a specific minimum height is required for `TextField`, use something like `lineLimit(5...)`.
+- If rendering SwiftUI views to images, strongly prefer `ImageRenderer` over `UIGraphicsImageRenderer`.
+- Use `#Preview` for previews, not the legacy `PreviewProvider` protocol.
 - When using `TabView(selection:)`, use a binding to a property that stores an enum rather than an integer or string. For example, `Tab("Home", systemImage: "house", value: .home)` is better than `Tab("Home", systemImage: "house", value: 0)`.
-- Strongly prefer to avoid breaking up view bodies using computed properties or methods that return `some View`, even if `@ViewBuilder` is used. Extract them into separate `View` structs instead, placing each into its own file. (Yes, this is repeated, but it’s so important it needs to be mentioned twice.)
+- Do not write computed properties or methods that return `some View`, even if `@ViewBuilder` is used. Create separate `View` structs instead.
+
+## Adaptability
+
+- Avoid using explicit values for spacing, padding, opacity, etc. Prefer the default values as they are more adaptive, e.g use: `.padding()` rather than `.padding(10)`
+- Prefer semantic colour and style names over explicit colors.
+- If explicit values, colours etc are unavoidable, define a small set of constants with semantically meaningful names and use them consistently for all the code.
 
 ## Animating views
 

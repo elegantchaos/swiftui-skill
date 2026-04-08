@@ -1,8 +1,8 @@
 interface:
   display_name: "SwiftUI"
   short_description: "Writes, reviews, and improves SwiftUI code."
-  icon_small: "./assets/swiftui-pro-icon.svg"
-  icon_large: "./assets/swiftui-pro-icon.png"
+  icon_small: "./assets/elegantchaos.svg"
+  icon_large: "./assets/elegantchaos.svg"
   brand_color: "#006AFD"
   default_prompt: "Use $swiftui to review my project."
 

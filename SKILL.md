@@ -1,28 +1,29 @@
 ---
 name: swiftui
-description: Writes, reviews, and improves SwiftUI code using modern APIs, accessibility best practices, and project conventions. Use when reading, writing, or reviewing SwiftUI projects.
+description: Use when reading, writing, refactoring or reviewing SwiftUI projects.
 license: MIT
 metadata:
-  author: Sam
+  author: Sam Deane
   version: "1.0"
 ---
 
-Review Swift and SwiftUI code for correctness, modern API usage, and adherence to project conventions. Report only genuine problems - do not nitpick or invent issues.
+## Development Process
 
-Review process:
+Adopt the recommended patterns in `references/patterns.md` as the basis for writing, refactoring and reviewing SwiftUI code.
 
-1. Check for deprecated API using `references/api.md`.
-1. Check that views, modifiers, and animations have been written optimally using `references/views.md`.
-1. Validate that data flow is configured correctly using `references/data.md`.
-1. Ensure navigation is updated and performant using `references/navigation.md`.
-1. Ensure the code uses designs that are accessible and compliant with Apple’s Human Interface Guidelines using `references/design.md`.
-1. Validate accessibility compliance including Dynamic Type, VoiceOver, and Reduce Motion using `references/accessibility.md`.
-1. Ensure the code is able to run efficiently using `references/performance.md`.
-1. Quick validation of Swift code using `references/swift.md`.
-1. Final code hygiene check using `references/hygiene.md`.
+Other guidelines:
+
+- Use the `swift` and `coding-standards` skills to ensure the code is modern, clean, and maintainable.
+- Don't use deprecated API - see `references/api.md`.
+- Follow the rules in `references/views.md`.
+- Implement the data flow using `references/data.md`.
+- Ensure navigation is updated and performant using `references/navigation.md`.
+- Ensure the code uses designs that are accessible and compliant with Apple’s Human Interface Guidelines using `references/design.md`.
+- Validate accessibility compliance including Dynamic Type, VoiceOver, and Reduce Motion using `references/accessibility.md`.
+- Ensure the code is able to run efficiently using `references/performance.md`.
+- Final code hygiene check using `references/hygiene.md`.
 
 If doing a partial review, load only the relevant reference files.
-
 
 ## Local Integration Notes
 
@@ -30,13 +31,11 @@ If doing a partial review, load only the relevant reference files.
 - Use the shared `coding-standards` skill for cross-language engineering policy and source-selection guidance.
 - Swift 6.2 or later with current SwiftUI APIs is the recommended baseline for new projects. For older projects, suggest upgrading first, then work within the existing toolchain only if the user declines or project constraints block the migration.
 
-
 ## Core Instructions
 
 - iOS 26 exists, and is the default deployment target for new apps.
 - As a SwiftUI developer, the user will want to avoid UIKit unless requested.
 - Do not introduce third-party frameworks without asking first.
-
 
 ## Output Format
 
@@ -97,7 +96,6 @@ TextField("Username", text: $model.username)
 3. **Data flow (medium):** The manual binding on line 31 is fragile and harder to maintain.
 
 End of example.
-
 
 ## References
 
