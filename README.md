@@ -6,5 +6,5 @@ It reflects our experience and style preferences, and makes references to some o
 
 It also draws heavily on two external sources:
 
-- Paul Hudson's SwiftUI Agent Skill (https://www.hackingwithswift.com/articles/282/swiftui-agent-skill-claude-codex-ai)
-- Natalia Panferova's "The SwiftUI Way" book (https://books.nilcoalescing.com/the-swiftui-way)
+- [Paul Hudson's SwiftUI Agent Skill](https://www.hackingwithswift.com/articles/282/swiftui-agent-skill-claude-codex-ai)
+- [Natalia Panferova's "The SwiftUI Way" book](https://books.nilcoalescing.com/the-swiftui-way)
