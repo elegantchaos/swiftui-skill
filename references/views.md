@@ -11,7 +11,7 @@
 - If rendering SwiftUI views to images, strongly prefer `ImageRenderer` over `UIGraphicsImageRenderer`.
 - Use `#Preview` for previews, not the legacy `PreviewProvider` protocol.
 - When using `TabView(selection:)`, use a binding to a property that stores an enum rather than an integer or string. For example, `Tab("Home", systemImage: "house", value: .home)` is better than `Tab("Home", systemImage: "house", value: 0)`.
-- Do not write computed properties or methods that return `some View`, even if `@ViewBuilder` is used. Create separate `View` structs instead.
+- Do not write computed properties or methods that return `some View` as a way of breaking up long `body` properties, even if `@ViewBuilder` is used. Create separate `View` structs instead.
 
 ## Animating views
 

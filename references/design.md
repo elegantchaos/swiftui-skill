@@ -2,16 +2,16 @@
 
 ## Adaptability
 
-- Avoid using explicit values for spacing, padding, opacity, etc. Prefer the default values as they are more adaptive, e.g use: `.padding()` rather than `.padding(10)`
+- Avoid hard-coded values for spacing, padding, opacity, etc. Prefer the default values as they are more adaptive, e.g use: `.padding()` rather than `.padding(10)`
 - Prefer semantic colour, style, font names over explicit ones.
 
-## Creating a uniform design in this app
+## Consistency
 
 Prefer to place standard fonts, sizes, colors, stack spacing, padding, rounding, animation timings, and more into a shared enum of constants, so they can be used by all views.
 
-Use semantically meaningful names for the constants.
+Use semantically meaningful names for the constants, indicating their purpose, rather than their value.
 
-For a clean design, minimize the number of these constants. Aim for consistency.
+For a clean design, minimize the number of variations of font, weight, style, padding, spacing etc. As a consequence, minimise the number of constants required. Aim for consistency across the project.
 
 ## Requirements for flexible, accessible design
 
@@ -33,5 +33,5 @@ For a clean design, minimize the number of these constants. Aim for consistency.
 - Use `bold()` instead of `fontWeight(.bold)`, because using `bold()` allows the system to choose the correct weight for the current context.
 - Only use `fontWeight()` for weights other than bold when there's an important reason - scattering around `fontWeight(.medium)` or `fontWeight(.semibold)` is counterproductive.
 - Avoid hard-coded values for padding and stack spacing unless specifically requested.
-- Avoid UIKit colors (`UIColor`) in SwiftUI code; use SwiftUI `Color` or asset catalog colors.
+- Avoid `UIColor` / `NSColor` in SwiftUI code; use SwiftUI `Color` or asset catalog colors.
 - The font size `.caption2` is extremely small, and is generally best avoided. Even the font size `.caption` is on the small side, and should be used carefully.
