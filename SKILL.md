@@ -8,6 +8,7 @@ metadata:
 ---
 
 Adopt the recommended patterns in `references/patterns.md` as the basis for writing, refactoring and reviewing SwiftUI code.
+
 Avoid the potentially harmful patterns. Flag them in existing code.
 
 Other guidelines:
@@ -17,7 +18,7 @@ Other guidelines:
 - Follow the rules in `references/views.md`.
 - Implement the data flow using `references/data.md`.
 - Ensure navigation is updated and performant using `references/navigation.md`.
-- Ensure the code uses designs that are accessible and compliant with Apple’s Human Interface Guidelines using `references/design.md`.
+- Ensure the code uses designs that are accessible and follow guidelines using `references/design.md`.
 - Validate accessibility compliance including Dynamic Type, VoiceOver, and Reduce Motion using `references/accessibility.md`.
 - Ensure the code is able to run efficiently using `references/performance.md`.
 - Avoid UIKit and AppKit unless requested, and use SwiftUI equivalents instead.

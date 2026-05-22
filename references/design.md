@@ -1,8 +1,16 @@
 # Design
 
+## Guidelines
+
+For apps targetting Apple platforms, follow the [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/).
+
+For apps targetting macOS, follow Mario Guzman's [layout guidelines](https://marioaguzman.github.io/design/layoutguidelines/).
+
 ## Adaptability
 
-- Avoid hard-coded values for spacing, padding, opacity, etc. Prefer the default values as they are more adaptive, e.g use: `.padding()` rather than `.padding(10)`
+- Avoid hard-coded values for spacing, padding, opacity, etc:
+  - Prefer to use SwiftUI's default values, as they are more adaptive.
+  - For example, use: `.padding()` rather than `.padding(10)`.
 - Prefer semantic colour, style, font names over explicit ones.
 
 ## Consistency
