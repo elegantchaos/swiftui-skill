@@ -1,12 +1,14 @@
 # Using modern SwiftUI API
 
+Use APIs that are available for the project's deployment target. Put new SDK-specific behavior behind `#available` or an enclosing `@available` declaration when the target can run an earlier OS; see `sdk27.md` for SDK 27 migration and availability guidance.
+
 - Always use `foregroundStyle()` instead of `foregroundColor()`.
 - Always use `clipShape(.rect(cornerRadius:))` instead of `cornerRadius()`.
 - Always use the `Tab` API instead of `tabItem()`.
 - Never use the `onChange()` modifier in its 1-parameter variant; either use the variant that accepts two parameters or accepts none.
 - Do not use `GeometryReader` if a newer alternative works: `containerRelativeFrame()`, `visualEffect()`, or the `Layout` protocol. Flag `GeometryReader` usage and suggest the modern alternative.
 - When designing haptic effects, prefer using `sensoryFeedback()` over older UIKit APIs such as `UIImpactFeedbackGenerator`.
-- Use the `@Entry` macro to define custom `EnvironmentValues`, `FocusValues`, `Transaction`, and `ContainerValues` keys. This replaces the legacy pattern of manually creating a type conforming to (for example) `EnvironmentKey` with a `defaultValue`, then extending `EnvironmentValues` with a computed property.
+- Prefer the `@Entry` macro to define custom `EnvironmentValues`, `FocusValues`, `Transaction`, and `ContainerValues` keys, with a stable default value. A manual `EnvironmentKey` with a `static let defaultValue` remains appropriate when it is the clearer way to memoize a complex default; see `data.md`.
 - Strongly prefer `overlay(alignment:content:)` over the deprecated `overlay(_:alignment:)`. For example, use `.overlay { Text("Hello, world!") }` rather than `.overlay(Text("Hello, world!"))`.
 - Never use `.navigationBarLeading` and `.navigationBarTrailing` for toolbar item placement; they are deprecated. The correct, modern placements are `.topBarLeading` and `.topBarTrailing`.
 - Prefer to rely on automatic grammar agreement when dealing with English, French, German, Portuguese, Spanish, and Italian. For example, use `Text("^[\(people) person](inflect: true)")` to show a number of people.

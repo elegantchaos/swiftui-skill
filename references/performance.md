@@ -12,6 +12,10 @@
 - For large data sets in `ScrollView`, use `LazyVStack`/`LazyHStack`; flag eager stacks with many children.
 - Prefer using `task()` over `onAppear()` when doing async work, because it will be cancelled automatically when the view disappears.
 - Avoid storing escaping `@ViewBuilder` closures on views when possible; store built view results instead.
+- Do not use collection indices or offsets as `ForEach` identity. Use an element identifier that survives reordering, insertion, filtering, and in-place edits.
+- Keep `List` and lazy-container rows unary: make each row a single top-level container, with any `if` or `switch` inside it. `Group` is a passthrough, not a row container.
+- Do not use `AnyView` for a list row. Replacing it with a `@ViewBuilder` helper alone is insufficient when that helper still produces a top-level conditional shape.
+- Use `-LogForEachSlowPath YES` when diagnosing non-constant row builders in a large list.
 
 Example:
 

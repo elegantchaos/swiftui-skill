@@ -17,10 +17,12 @@ Other guidelines:
 - Don't use deprecated API - see `references/api.md`.
 - Follow the rules in `references/views.md`.
 - Implement the data flow using `references/data.md`.
+- Read `references/localization.md` when writing or reviewing user-facing strings.
 - Ensure navigation is updated and performant using `references/navigation.md`.
 - Ensure the code uses designs that are accessible and follow guidelines using `references/design.md`.
 - Validate accessibility compliance including Dynamic Type, VoiceOver, and Reduce Motion using `references/accessibility.md`.
 - Ensure the code is able to run efficiently using `references/performance.md`.
+- Read `references/sdk27.md` when targeting SDK 27 APIs, resolving SwiftUI source incompatibilities after an SDK update, or adding availability-sensitive features.
 - Avoid UIKit and AppKit unless requested, and use SwiftUI equivalents instead.
 
 ## Command Pattern

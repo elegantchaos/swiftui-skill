@@ -11,3 +11,4 @@
 - If an alert has only a single “OK” button that does nothing but dismiss the alert, it can be omitted entirely: `.alert("Dismiss Me", isPresented: $isShowingAlert) { }`.
 - If a sheet is designed to present an optional piece of data, prefer `sheet(item:)` over `sheet(isPresented:)` so the optional is safely unwrapped.
 - When using `sheet(item:)` with a view that accepts the item as its only initializer parameter, prefer `sheet(item: $someItem, content: SomeView.init)` over `sheet(item: $someItem) { someItem in SomeView(item: someItem) }`.
+- On SDK 27, prefer the item-binding overloads of `alert` and `confirmationDialog` when the presentation depends on an optional item. Gate them for older deployment targets; see `sdk27.md`.
